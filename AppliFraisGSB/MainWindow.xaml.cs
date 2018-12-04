@@ -23,9 +23,8 @@ namespace AppliFraisGSB
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string mail;
-        private string password;
-        
+        Personne secretaire;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,15 +34,14 @@ namespace AppliFraisGSB
             connection.Open();
             MySqlDataReader read = cmd.ExecuteReader();
             read.Read();
-            mail = read["mail"].ToString();
-            password = read["mdp"].ToString();
+            secretaire = new Personne(read["prenom"].ToString(), read["nom"].ToString(), read["mail"].ToString(), read["telephone"].ToString(), read["mdp"].ToString(), read["sexe"].ToString());
+            connection.Close();
 
-;            connection.Close();
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (textName.Text == mail && textPassword.Password == password)
+            if (textName.Text == secretaire.mail && textPassword.Password == secretaire.password)
             {
                 HomeWindow main = new HomeWindow();
                 App.Current.MainWindow = main;
