@@ -19,6 +19,7 @@ namespace AppliFraisGSB
     /// </summary>
     public partial class HomeWindow : Window
     {
+        public string Role { private get; set; }
         public HomeWindow()
         {
             InitializeComponent();

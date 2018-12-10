@@ -36,7 +36,6 @@ namespace AppliFraisGSB
             read.Read();
             secretaire = new Personne(read["prenom"].ToString(), read["nom"].ToString(), read["mail"].ToString(), read["telephone"].ToString(), read["mdp"].ToString(), read["sexe"].ToString());
             connection.Close();
-
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -44,6 +43,7 @@ namespace AppliFraisGSB
             if (textName.Text == secretaire.mail && textPassword.Password == secretaire.password)
             {
                 HomeWindow main = new HomeWindow();
+                main.Role = "secretaire";
                 App.Current.MainWindow = main;
                 this.Close();
                 main.Show();
