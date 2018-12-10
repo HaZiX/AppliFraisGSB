@@ -8,24 +8,25 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="140"></RowDefinition>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Column="1" Grid.Row="1" Name="textName" >
+        <TextBox Grid.Column="1" Grid.Row="1" Name="textName">
 
         </TextBox>
         <PasswordBox Grid.Column="1" Grid.Row="3" Name="textPassword" >
 
         </PasswordBox>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="55.647,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Se connecter" Grid.Column="1" HorizontalAlignment="Center" Margin="37,29,37,0" Grid.Row="4" VerticalAlignment="Top" Width="126" Click="Button_Click" RenderTransformOrigin="0.206,0.865" />
+        <Image Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="10,16,0,0" VerticalAlignment="Top" Width="180" Source="ressources/gsb.png" />
     </Grid>
 </Window>

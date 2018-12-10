@@ -5,9 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppliFraisGSB"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="450" Width="800">
+        Title="HomeWindow" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card Padding="32" Grid.Column="0" Grid.Row="1" Height="250" Margin="10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+            <Viewbox Width="60" Height="60">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z" Fill="Black" />
+                </Canvas>
+            </Viewbox>
+            <Button Content="Voir les Medecins" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Top" Width="124"/>
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="32" Grid.Column="1" Grid.Row="1" Height="250" Margin="10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+            <Viewbox Width="60" Height="60">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M2,22V7A1,1 0 0,1 3,6H7V2H17V6H21A1,1 0 0,1 22,7V22H14V17H10V22H2M9,4V10H11V8H13V10H15V4H13V6H11V4H9M4,20H8V17H4V20M4,15H8V12H4V15M16,20H20V17H16V20M16,15H20V12H16V15M10,15H14V12H10V15Z" Fill="Black" />
+                </Canvas>
+            </Viewbox>
+                <Button Content="Voir les cabinets" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Top" Width="124"/>
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="32" Grid.Column="2" Grid.Row="1" Height="250" Margin="10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>   
+            <Viewbox Width="60" Height="60">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M9.96,11.31C10.82,8.1 11.5,6 13,6C14.5,6 15.18,8.1 16.04,11.31C17,14.92 18.1,19 22,19V17C19.8,17 19,14.54 17.97,10.8C17.08,7.46 16.15,4 13,4C9.85,4 8.92,7.46 8.03,10.8C7.03,14.54 6.2,17 4,17V2H2V22H22V20H4V19C7.9,19 9,14.92 9.96,11.31Z" Fill="Black" />
+                </Canvas>
+            </Viewbox>
+                <Button Content="Voir les stats" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Top" Width="124"  />
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="32" Grid.Column="3" Grid.Row="1" Height="250" Margin="10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Viewbox Width="60" Height="60">
+                    <Canvas Width="24" Height="24">
+                        <Path Data="M19,19V8H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M7,10H9V12H7V10M15,10H17V12H15V10M11,14H13V16H11V14M15,14H17V16H15V14Z" Fill="Black" />
+                    </Canvas>
+                </Viewbox>
+                <Button Content="Voir les visites" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Top" Width="124"/>
+
+            </Grid>
+        </materialDesign:Card>
+
+
     </Grid>
 </Window>

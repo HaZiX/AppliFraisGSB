@@ -42,3 +42,9 @@ D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\AppliFraisGSB.csproj.CoreCompile
 D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\AppliFraisGSB.csproj.CopyComplete
 D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\AppliFraisGSB.exe
 D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\AppliFraisGSB.pdb
+D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignColors.dll
+D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignColors.pdb
+D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\App.baml
