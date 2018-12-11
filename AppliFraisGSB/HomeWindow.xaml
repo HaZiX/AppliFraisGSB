@@ -72,7 +72,7 @@
                         <Path Data="M9.96,11.31C10.82,8.1 11.5,6 13,6C14.5,6 15.18,8.1 16.04,11.31C17,14.92 18.1,19 22,19V17C19.8,17 19,14.54 17.97,10.8C17.08,7.46 16.15,4 13,4C9.85,4 8.92,7.46 8.03,10.8C7.03,14.54 6.2,17 4,17V2H2V22H22V20H4V19C7.9,19 9,14.92 9.96,11.31Z" Fill="Black" />
                     </Canvas>
                 </Viewbox>
-                <Button Content="Voir les stats" HorizontalAlignment="Right"  Grid.Row="2" VerticalAlignment="Top" Width="124" Margin="-5,0,-4.6,0"  />
+                <Button Content="Voir les stats" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Top" Width="124" Margin="-5,0,-4.6,0" Click="Button_Click_2"  />
             </Grid>
         </materialDesign:Card>
 
@@ -88,7 +88,7 @@
                         <Path Data="M19,19V8H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M7,10H9V12H7V10M15,10H17V12H15V10M11,14H13V16H11V14M15,14H17V16H15V14Z" Fill="Black" />
                     </Canvas>
                 </Viewbox>
-                <Button Content="Voir les visites" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Bottom" Width="124" Margin="-5,0,-4.6,29.6"/>
+                <Button Content="Voir les visites" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Bottom" Width="124" Margin="-5,0,-4.6,29.6" Click="Button_Click_3"/>
 
             </Grid>
         </materialDesign:Card>

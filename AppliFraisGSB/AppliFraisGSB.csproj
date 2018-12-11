@@ -75,6 +75,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Medecin.cs" />
+    <Compile Include="Secretaire.cs" />
+    <Compile Include="StatistiqueWindow.xaml.cs">
+      <DependentUpon>StatistiqueWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visiteur.cs" />
+    <Compile Include="VisiteWindow.xaml.cs">
+      <DependentUpon>VisiteWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="CabinetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +117,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StatistiqueWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VisiteWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Personne.cs" />

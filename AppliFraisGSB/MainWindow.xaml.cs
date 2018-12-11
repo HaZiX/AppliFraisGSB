@@ -23,7 +23,7 @@ namespace AppliFraisGSB
     /// </summary>
     public partial class MainWindow : Window
     {
-        Personne secretaire;
+        Secretaire secretaire;
 
         public MainWindow()
         {
@@ -34,7 +34,7 @@ namespace AppliFraisGSB
             connection.Open();
             MySqlDataReader read = cmd.ExecuteReader();
             read.Read();
-            secretaire = new Personne(read["prenom"].ToString(), read["nom"].ToString(), read["mail"].ToString(), read["telephone"].ToString(), read["mdp"].ToString(), read["sexe"].ToString());
+            secretaire = new Secretaire((int)read["id_secretaire"] , read["prenom"].ToString(), read["nom"].ToString(), read["mail"].ToString(), read["telephone"].ToString(), read["mdp"].ToString(), read["sexe"].ToString());
             connection.Close();
         }
 
