@@ -41,5 +41,23 @@ namespace AppliFraisGSB
             main.Show();
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            StatistiqueWindow main = new StatistiqueWindow();
+            App.Current.MainWindow = main;
+            this.Close();
+            main.Show();
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            VisiteWindow main = new VisiteWindow();
+            App.Current.MainWindow = main;
+            this.Close();
+            main.Show();
+
+        }
     }
 }
