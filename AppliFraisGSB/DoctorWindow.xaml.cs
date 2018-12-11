@@ -41,7 +41,13 @@ namespace AppliFraisGSB
                 dgUsers.ItemsSource = users;
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HomeWindow main = new HomeWindow();
+            App.Current.MainWindow = main;
+            this.Close();
+            main.Show();
+        }
     }
 
 }

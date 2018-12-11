@@ -8,7 +8,22 @@
         mc:Ignorable="d"
         Title="DoctorWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="dgUsers" AutoGenerateColumns="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Button
+        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+        materialDesign:ShadowAssist.ShadowDepth="Depth5" Grid.Column="0" Grid.Row="0" Click="Button_Click">
+        <materialDesign:PackIcon Kind="ArrowLeft" />
+        </Button>
+        <DataGrid Name="dgUsers" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Code" Binding="{Binding id}" />
                 <DataGridTextColumn Header="Prenom" Binding="{Binding name}" />
