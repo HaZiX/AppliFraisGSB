@@ -48,3 +48,5 @@ D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignColors.pdb
 D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\projet\AppliFraisGSB\AppliFraisGSB\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\App.baml
+D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\DoctorWindow.g.cs
+D:\projet\AppliFraisGSB\AppliFraisGSB\obj\Debug\DoctorWindow.baml

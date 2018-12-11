@@ -15,22 +15,13 @@ using System.Windows.Shapes;
 namespace AppliFraisGSB
 {
     /// <summary>
-    /// Logique d'interaction pour HomeWindow.xaml
+    /// Logique d'interaction pour DoctorWindow.xaml
     /// </summary>
-    public partial class HomeWindow : Window
+    public partial class DoctorWindow : Window
     {
-        public string Role { private get; set; }
-        public HomeWindow()
+        public DoctorWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DoctorWindow main = new DoctorWindow();
-            App.Current.MainWindow = main;
-            this.Close();
-            main.Show();
         }
     }
 }
