@@ -26,8 +26,6 @@ packages/
 *.svclog
 *.scc
 *.baml
-*.cs
-*.i.cs
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
