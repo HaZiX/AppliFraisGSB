@@ -22,6 +22,8 @@ namespace AppliFraisGSB
         public CabinetWindow()
         {
             InitializeComponent();
+
         }
     }
+
 }
