@@ -9,7 +9,7 @@
         Title="DoctorWindow" Height="450" Width="800">
     <Grid>
         <DataGrid Margin="0,10,0,0" ItemsSource="{Binding Items3}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
-                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8" SelectionChanged="DataGrid_SelectionChanged">
+                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Binding="{Binding IsSelected}" 
                                             ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
