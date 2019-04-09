@@ -9,9 +9,9 @@
         Title="DoctorWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -20,10 +20,20 @@
         </Grid.RowDefinitions>
         <Button
         Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
-        materialDesign:ShadowAssist.ShadowDepth="Depth5" Grid.Column="0" Grid.Row="0" Click="Button_Click">
-        <materialDesign:PackIcon Kind="ArrowLeft" />
+        materialDesign:ShadowAssist.ShadowDepth="Depth1" Name="ButtonBack" Grid.Column="0" Grid.Row="0" Click="Button_Click">
+            <materialDesign:PackIcon Kind="ArrowLeft" />
         </Button>
-        <DataGrid Name="dgUsers" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1">
+        <Button Grid.Column="2" Grid.Row="0"
+        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+        materialDesign:ShadowAssist.ShadowDepth="Depth1" Name="ButtonAdd" Click="Button_Click_1">
+            <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" />
+        </Button>
+        <DataGrid Name="dgUsers" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1" IsReadOnly="True">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Code" Binding="{Binding id}" />
                 <DataGridTextColumn Header="Prenom" Binding="{Binding name}" />
@@ -31,7 +41,76 @@
                 <DataGridTextColumn Header="Adresse mail" Binding="{Binding mail}" />
                 <DataGridTextColumn Header="sexe" Binding="{Binding sexe}" />
                 <DataGridTextColumn Header="téléphone" Binding="{Binding phone}" />
+                <DataGridTextColumn Header="date de naissance" Binding="{Binding dateNaissance}" />
+                <DataGridTextColumn Header="numéro cabinet" Binding="{Binding IdCabinet}" />
             </DataGrid.Columns>
         </DataGrid>
+        <materialDesign:DialogHost Name="DialogDoctor" HorizontalAlignment="Center" VerticalAlignment="Center" IsOpen="False"  Grid.Column="1" Grid.Row="1">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content=""  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Name="dialogLabel"  FontSize="18" FontWeight="Bold"/>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                        x:Name="nom"
+                        materialDesign:HintAssist.Hint="Nom">
+                    </TextBox>
+                    <TextBox Visibility="Hidden" 
+                        x:Name="id">
+                    </TextBox>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                        x:Name="prenom"
+                        materialDesign:HintAssist.Hint="Prenom">
+                    </TextBox>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                        x:Name="telephone"
+                        materialDesign:HintAssist.Hint="Telephone">
+                    </TextBox>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                        x:Name="mail"
+                        materialDesign:HintAssist.Hint="Mail">
+                    </TextBox>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                        x:Name="date"
+                        materialDesign:HintAssist.Hint="Date de naissance">
+                    </TextBox>
+                    <PasswordBox  HorizontalAlignment="Center" Height="23" Grid.Row="7" Grid.Column="1" VerticalAlignment="Top" Width="120"
+                        x:Name="mdp"
+                        materialDesign:HintAssist.Hint="Mot de passe">
+                    </PasswordBox>
+                    <CheckBox Content="Femme" HorizontalAlignment="Center"  Grid.Row="9" Grid.Column="1" Name="test" IsChecked="False" />
+                    <ComboBox materialDesign:HintAssist.Hint="Choisir le cabinet" Grid.Row="8"  Grid.Column="1" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Name="idCabinet">
+
+                    </ComboBox>
+                    <Button Content="Ajouter" HorizontalAlignment="Center" Name="ButtonCreate"  Grid.Row="10" Grid.Column="1" VerticalAlignment="Bottom" Width="117" Height="25" Click="CreateMedecin" Visibility="Hidden" />
+                    <Button Content="Modifier" Name="ButtonUpdate"  HorizontalAlignment="Center"  Grid.Row="10" Grid.Column="1" VerticalAlignment="Bottom" Width="117" Height="25" Click="UpdateMedecin" Visibility="Hidden" />
+                    <Button
+                        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1" Grid.Column="0" Grid.Row="1" Click="Button_Click_2" Width="30" Height="30">
+                        <materialDesign:PackIcon Kind="Close" />
+                    </Button>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+
     </Grid>
 </Window>

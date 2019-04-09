@@ -2,11 +2,38 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppliFraisGSB"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="StatistiqueWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button
+        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+        materialDesign:ShadowAssist.ShadowDepth="Depth1" Name="ButtonBack" Grid.Column="0" Grid.Row="0" Click="Button_Click">
+            <materialDesign:PackIcon Kind="ArrowLeft" />
+        </Button>
+        <Label Content="Label" Name="day" HorizontalAlignment="Left" Margin="198,0.2,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" RenderTransformOrigin="0.237,0.461"/>
+        <Label Content="Label" Name="total" Grid.Column="2" HorizontalAlignment="Left" Margin="0.2,0.2,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-1.654,-2.156"/>
+        <Label Content="Statistiques" FontSize="24" HorizontalAlignment="Left" Margin="198,23,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ComboBox materialDesign:HintAssist.Hint="Choisir le medecin" Grid.Row="1" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Name="ComboMedecin" Margin="11.6,40.2,66.8,0" SelectionChanged="Medecin_Changed" Grid.Column="1"/>
+        <ComboBox materialDesign:HintAssist.Hint="Choisir le visiteur" Grid.Row="1" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Name="ComboVisiteur" Margin="10.2,40.2,68.2,0" Grid.Column="2" SelectionChanged="Visiteur_Changed"/>
+        <Label Content="" Name="LabelMedecin" HorizontalAlignment="Left" Margin="198,81.2,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="" Name="LabelVisiteur" Grid.Column="2" HorizontalAlignment="Left" Margin="0.2,81.2,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="1.669,0.32"/>
+        <Separator Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="100" Margin="198,66,0,0" VerticalAlignment="Top" Width="397" Grid.RowSpan="2"/>
+
+
     </Grid>
 </Window>

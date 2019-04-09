@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:AppliFraisGSB"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -20,10 +21,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Column="1" Grid.Row="1" Name="textName" >
+        <TextBox Grid.Column="1" Grid.Row="1" Name="textName" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" materialDesign:HintAssist.Hint="Adresse mail">
 
         </TextBox>
-        <PasswordBox Grid.Column="1" Grid.Row="3" Name="textPassword" >
+        <PasswordBox Grid.Column="1" Grid.Row="3" Name="textPassword" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}" materialDesign:HintAssist.Hint="Mot de passe" >
 
         </PasswordBox>
         <Button Content="Se connecter" Grid.Column="1" HorizontalAlignment="Center" Margin="37,29,37,0" Grid.Row="4" VerticalAlignment="Top" Width="126" Click="Button_Click" RenderTransformOrigin="0.206,0.865" />

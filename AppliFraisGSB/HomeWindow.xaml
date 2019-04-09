@@ -28,7 +28,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:Card Padding="32" Grid.Column="0" Grid.Row="1" Height="250" Margin="10,0">
+
+
+        <materialDesign:Card Padding="32" Grid.Column="0" Grid.Row="1" Height="250" Margin="10,0" Name="CardDoctor" Visibility="Visible">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -44,7 +46,7 @@
             </Grid>
         </materialDesign:Card>
 
-        <materialDesign:Card Padding="32" Grid.Column="1" Grid.Row="1" Height="250" Margin="10,0">
+        <materialDesign:Card Padding="32" Grid.Column="3" Grid.Row="1" Height="250" Margin="10,0" Visibility="Visible" Name="CardCabinet">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -76,7 +78,7 @@
             </Grid>
         </materialDesign:Card>
 
-        <materialDesign:Card Padding="32" Grid.Column="3" Grid.Row="1" Height="250" Margin="10,0">
+        <materialDesign:Card Padding="32" Grid.Column="1" Grid.Row="1" Height="250" Margin="10,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -92,6 +94,8 @@
 
             </Grid>
         </materialDesign:Card>
+        <Label Content="Label" Name="profil" Grid.Column="3" HorizontalAlignment="Left" Margin="71.8,10,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button Content="Déconnexion" Click="Deconnexion" Grid.Column="3" HorizontalAlignment="Left" Margin="71.8,36,0,0" VerticalAlignment="Top" Width="117" Height="24"/>
 
 
     </Grid>

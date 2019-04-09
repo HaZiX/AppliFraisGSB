@@ -3,10 +3,93 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:AppliFraisGSB"
         mc:Ignorable="d"
         Title="CabinetWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="75"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Button
+        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+        materialDesign:ShadowAssist.ShadowDepth="Depth1" Name="ButtonBack1" Grid.Column="0" Grid.Row="0" Click="Button_Back">
+            <materialDesign:PackIcon Kind="ArrowLeft" />
+        </Button>
+        <Button Grid.Column="3" Grid.Row="0"
+        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+        materialDesign:ShadowAssist.ShadowDepth="Depth1" Name="ButtonAdd1" Click="Button_Add">
+            <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" />
+
+        </Button>
+        <DataGrid Name="dgUsers" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick" />
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Code" Binding="{Binding IdCabinet}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Adresse" Binding="{Binding Adresse}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Coordonnées" Binding="{Binding Coordonnees}" IsReadOnly="True" />
+                
+                
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <materialDesign:DialogHost Name="DialogCabinet" HorizontalAlignment="Center" VerticalAlignment="Center" IsOpen="False" Grid.Column="1" Grid.Row="1">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content=""  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Name="dialogLabel"  FontSize="18" FontWeight="Bold"/>
+                    <TextBox Visibility="Hidden" 
+                        x:Name="id">
+                    </TextBox>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                        x:Name="adresse"
+                        materialDesign:HintAssist.Hint="Adresse">
+                    </TextBox>
+                    <TextBox  HorizontalAlignment="Center" Height="23" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                        x:Name="coordonnees"
+                        materialDesign:HintAssist.Hint="Coordonnées">
+                    </TextBox>
+                    
+                    <Button Content="Ajouter" HorizontalAlignment="Center" Name="ButtonCreate"  Grid.Row="7" Grid.Column="1" VerticalAlignment="Bottom" Width="117" Height="25" Click="CreateCabinet" Visibility="Hidden" />
+                    <Button Content="Modifier" Name="ButtonUpdate"  HorizontalAlignment="Center"  Grid.Row="7" Grid.Column="1" VerticalAlignment="Bottom" Width="117" Height="25" Click="UpdateCabinet" Visibility="Hidden" />
+                    <Button
+                        Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1" Grid.Column="0" Click="Button_Close" Grid.Row="1" Width="30" Height="30">
+                        <materialDesign:PackIcon Kind="Close" />
+                    </Button>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
         
+
+
     </Grid>
 </Window>

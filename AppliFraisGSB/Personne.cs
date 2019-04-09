@@ -26,5 +26,15 @@ namespace AppliFraisGSB
             this.password = password;
             this.sexe = sexe;
         }
+
+        protected Personne(string name, string surname, string mail, string phone, string password, string sexe)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.mail = mail;
+            this.phone = phone;
+            this.password = password;
+            this.sexe = sexe;
+        }
     }
 }
